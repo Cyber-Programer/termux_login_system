@@ -10,25 +10,11 @@ CYAN=$'\033[1;36m'
 WHITE=$'\033[1;37m'
 NC=$'\033[0m'
 
-
-if test -f "/data/data/com.termux/files/usr/bin/tmxlogin";then
+if [ -f "/data/data/com.termux/files/usr/bin/tmxlogin" ]; then
 
     echo "${GREEN} Available ${NC}"
 
-    if ! "rm -rf ../usr/bin/tmxlogin"; then
-        echo "${RED}File removeing problem  [../usr/bin/tmxlogin]${NC}"
+    if ! rm -f "/data/data/com.termux/files/usr/bin/tmxlogin"; then
+        echo "${RED}File removal problem [/data/data/com.termux/files/usr/bin/tmxlogin]${NC}"
     else
-        echo "${GREEN}File removeing Done !${NC}"
-    fi
-
-    echo ""    
-    echo "${RED}Manualy remove the 'tmxlogin' word from the /usr/etc/bash.bashrc file ${NC}"
-
-    echo "${GREEN}All Done ${NC}"
-    echo "${GREEN}Join Our Telegram Channel${NC}"
-    sleep 1
-    xdg-open https://t.me/cyber_man_root
-
-else
-    echo "${RED}File not found${NC}"
-fi
+        echo "${GREEN}File removal Done !
