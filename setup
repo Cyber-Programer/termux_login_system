@@ -10,7 +10,7 @@ CYAN=$'\033[1;36m'
 WHITE=$'\033[1;37m'
 NC=$'\033[0m'
 
-if [ -f "login" ]; then
+if [ -f "tmxlogin" ]; then
 
     echo "${GREEN}Available${NC}"
 
@@ -20,14 +20,14 @@ if [ -f "login" ]; then
         echo "${GREEN}Exicute Permission Provide Done${NC}"
     fi
 
-    if ! cp -f login ../usr/bin/; then
-        echo "${RED}File [ login ] coppy Eroor${NC}"
+    if ! cp -f tmxlogin ../usr/bin/; then
+        echo "${RED}File [ tmxlogin ] coppy Eroor${NC}"
     else
-        echo "${GREEN}File [ login ] coppy Done ${NC}"
+        echo "${GREEN}File [ tmxlogin ] coppy Done ${NC}"
     fi
 
-    if ! grep -q 'login' ../usr/etc/bash.bashrc; then
-        if ! echo 'login' >> ../usr/etc/bash.bashrc; then
+    if ! grep -q 'tmxlogin' ../usr/etc/bash.bashrc; then
+        if ! echo 'tmxlogin' >> ../usr/etc/bash.bashrc; then
             echo "${RED}File can't set in .bashrc file${NC}"
         else
             echo "${GREEN}File set on .bas
