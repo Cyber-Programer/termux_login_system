@@ -1,7 +1,8 @@
 #!/bin/bash
-read -p "Username: " usr
-read -s -p "Password: " pass
+read -p "    Username: " usr
+read -s -p "    Password: " pass
 echo ""
+
 
 username=""
 password=""
