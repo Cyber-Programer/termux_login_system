@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if test -f "login";then
+
+    echo "available"
+    cp login /data/data/com.termux/files/usr/bin/
+    echo "login" >> /data/data/com.termux/files/usr/etc/bash.bashrc
+
+else
+    echo "File not found"
+fi
