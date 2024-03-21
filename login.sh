@@ -3,8 +3,8 @@ read -p "Username: " usr
 read -s -p "Password: " pass
 echo ""
 
-username="cyberMan"
-password="cyberRoot"
+username=""
+password=""
 
 welcome(){
 
@@ -86,8 +86,6 @@ sysinfo(){
     # Get the hostname
     hostname=$(hostname)
 
-    # Get the operating system
-    os=$(cat /etc/os-release | grep '^NAME=' | cut -d '=' -f 2 | tr -d '"')
 
     # Get the kernel version
     kernel_version=$(uname -r)
@@ -112,7 +110,6 @@ sysinfo(){
 
     # Display the device details
     echo "Hostname: $hostname"
-    echo "Operating System: $os"
     echo "Kernel Version: $kernel_version"
     echo "Uptime: $uptime"
     echo "Number of Users Logged In: $user_count"
