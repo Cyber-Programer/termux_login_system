@@ -17,4 +17,18 @@ if [ -f "/data/data/com.termux/files/usr/bin/tmxlogin" ]; then
     if ! rm -f "/data/data/com.termux/files/usr/bin/tmxlogin"; then
         echo "${RED}File removal problem [/data/data/com.termux/files/usr/bin/tmxlogin]${NC}"
     else
-        echo "${GREEN}File removal Done !
+        echo "${GREEN}File removal Done !${NC}"
+    fi
+
+    echo ""    
+    echo "${RED}Manualy remove the 'login' word from the /usr/etc/bash.bashrc file ${NC}"
+
+    echo "${GREEN}All Done ${NC}"
+    echo "${GREEN}Join Our Telegram Channel${NC}"
+    sleep 1
+    xdg-open https://t.me/cyber_man_root
+
+else
+    echo "${RED}File not found${NC}"
+fi
+
