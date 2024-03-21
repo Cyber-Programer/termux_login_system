@@ -1,11 +1,42 @@
 #!/bin/bash
 
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+NC=$(tput sgr0)
+
 if test -f "login";then
 
-    echo "available"
-    cp login /data/data/com.termux/files/usr/bin/
-    echo "login" >> /data/data/com.termux/files/usr/etc/bash.bashrc
+    echo "${GREEN}Available${NC}"
+
+    if ! "chmod +x *"; then
+        echo "${RED}Exicute Permission provide Eroor${NC}"
+    else
+        echo "${GREEN}Exicute Permission Provide Done${NC}"
+
+
+    fi 
+
+    if ! cp login ../usr/bin/; then
+        echo "${RED}File [ login ] coppy Eroor${NC}"
+    else
+        echo "${GREEN}File [ login ] coppy Done ${NC}"
+    fi
+
+    if ! "echo 'login' >> ../usr/etc/bash.bashrc"; then
+        echo "${RED}File can't set in .bashrc file${NC}"
+    else
+        echo "${GREEN}File set on .bashrc file${NC}"
+    fi
+
+    echo "${GREEN}All Done ${NC}"
+    echo "${GREEN}Join Our Telegram Channel${NC}"
+    sleep 1
+    xdg-open https://t.me/cyber_man_root
+
+
 
 else
-    echo "File not found"
+    echo "${RED}File not found${NC}"
 fi
+
+
