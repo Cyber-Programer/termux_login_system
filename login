@@ -14,7 +14,7 @@ password=""
 welcome(){
 
     # Declare an array with the greetings
-    x=("    Welcome, Chief! 🎩" "    Hello, Captain! ⚓️")
+    x=("    Welcome, Chief! 🎩" "    Hi, Captain! ⚓️")
 
     num_greetings=${#x[@]}
 
