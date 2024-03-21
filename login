@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 read -p "    Username: " usr
 read -s -p "    Password: " pass
 echo ""
