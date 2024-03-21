@@ -89,7 +89,7 @@ logo(){
 sysinfo(){
 
     # Get the hostname
-    hostname=$(hostname)
+    system=$(whoami)
 
 
     # Get the kernel version
@@ -108,7 +108,7 @@ sysinfo(){
     disk_usage=$(df -h / | tail -n 1 | awk '{print $5}')
 
     # Display the device details
-    echo "    Hostname: $hostname"
+    echo "    system: $system"
     echo "    Kernel Version: $kernel_version"
     echo "    CPU Model: $cpu_model"
     echo "    CPU Cores: $cpu_cores"
@@ -117,7 +117,7 @@ sysinfo(){
     echo ""
     echo ""
 
-    read -p "    Press Enter To Start $hostname  "
+    read -p "    Press Enter To Start $system  "
 
 
     
