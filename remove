@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if test -f "/data/data/com.termux/files/usr/bin/login";then
+
+    echo "available"
+    rm -rf /data/data/com.termux/files/usr/bin/login
+    echo ""    
+    echo "Manualy remove the 'login' word from the /usr/etc/bash.bashrc file "
+
+else
+    echo "File not found"
+fi
