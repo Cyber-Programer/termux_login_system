@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Set the color variables
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
-PURPLE=$(tput setaf 5)
-GRAY=$(tput setaf 8)
-CYAN=$(tput setaf 6)
-WHITE=$(tput setaf 7)
-NC=$(tput sgr0)
+RED=$'\033[1;31m'
+GREEN=$'\033[1;32m'
+YELLOW=$'\033[1;33m'
+BLUE=$'\033[1;34m'
+PURPLE=$'\033[1;35m'
+GRAY=$'\033[1;30m'
+CYAN=$'\033[1;36m'
+WHITE=$'\033[1;37m'
+NC=$'\033[0m'
 
 clear
 echo -e ""
