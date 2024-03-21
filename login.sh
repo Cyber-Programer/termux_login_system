@@ -3,8 +3,8 @@ read -p "Username: " usr
 read -s -p "Password: " pass
 echo ""
 
-username=""
-password=""
+username="user" # Enter your username hear
+password="pass" # Enter your password hear
 
 welcome(){
 
