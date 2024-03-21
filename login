@@ -1,15 +1,32 @@
 #!/bin/bash
+
+# Set the color variables
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+PURPLE=$(tput setaf 5)
+GRAY=$(tput setaf 8)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+NC=$(tput sgr0)
+
 clear
-echo ""
-echo ""
-echo ""
-read -p "    Username: " usr
-echo ""
-read -s -p "    Password: " pass
-echo ""
+echo -e ""
+echo -e ""
+echo -e ""
+read -p "${RED}    Username: ${NC}" usr
+echo -e ""
+read -s -p "${RED}    Password: ${NC}" pass
+echo -e ""
 
 username=""
 password=""
+
+
+
+
+
 
 welcome(){
 
@@ -20,70 +37,71 @@ welcome(){
 
     random_index=$((RANDOM % num_greetings))
 
-    echo "${x[random_index]}"
+    echo -e "${YELLOW}${x[random_index]}${NC}"
 
 }
 
-w8=0.8
+w8=0.6
 w1=0.1
 
 loading(){
-    echo "    Your system is booting up. Please wait..."
+    echo -e "${YELLOW}    Your system is booting up. Please wait...${NC}"
     sleep $w8
 
-    echo "    Analyzing processor speed..."
+    echo -e "${YELLOW}    Analyzing processor speed...${NC}"
     sleep $w8
 
 
 
-    echo "    Loading system resources..."
+    echo -e "${YELLOW}    Loading system resources...${NC}"
     sleep $w8
 
-    echo "    Establishing network connection..."
+    echo -e "${YELLOW}    Establishing network connection...${NC}"
     sleep $w8
 
-    echo "    Configuring system settings..."
+    echo -e "${YELLOW}    Configuring system settings...${NC}"
     sleep $w8
 
-    echo "    Performing system diagnostic..."
+    echo -e "${YELLOW}    Performing system diagnostic...${NC}"
     sleep $w8
 
-    echo "    Running startup script..."
+    echo -e "${YELLOW}    Running startup script...${NC}"
     sleep $w8
 
-    echo "    Checking disk drivers..."
+    echo -e "${YELLOW}    Checking disk drivers...${NC}"
     sleep $w8
 
-    echo "    Starting system services..."
+    echo -e "${YELLOW}    Starting system services...${NC}"
     sleep $w8
 
-    echo "    Launching user interface..."
+    echo -e "${YELLOW}    Launching user interface...${NC}"
     sleep $w8
 
-    echo "    Booting Done ...!"
+    echo -e "${YELLOW}    Booting Done ...!${NC}"
     sleep $w8
 }
 
 logo(){
-    # echo " ⠀⠀⢀⣴⣶⣿⣿⣷⡶⢤⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⢶⣿⣿⣿⣿⣶⣄⠀⠀"
-    echo ""
-    echo "    ⠀⢠⡿⠿⠿⠿⢿⣿⣿⣷⣾⣆⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⡿⠿⠿⠿⠿⣦⠀";sleep $w1
-    echo "    ⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⣿⡿⠆⠀⠀⠀⠀⠰⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀";sleep $w1
-    echo "    ⠀⠀⠀⠀⣀⣤⡤⠄⢤⣀⡈⢿⡄⠀⠀⠀⠀⢠⡟⢁⣠⡤⠠⠤⢤⣀⠀⠀⠀⠀";sleep $w1
-    echo "    ⠐⢄⣀⣼⢿⣾⣿⣿⣿⣷⣿⣆⠁⡆⠀⠀⢰⠈⢸⣿⣾⣿⣿⣿⣷⡮⣧⣀⡠⠀";sleep $w1
-    echo "    ⠰⠛⠉⠙⠛⠶⠶⠏⠷⠛⠋⠁⢠⡇⠀⠀⢸⡄⠈⠛⠛⠿⠹⠿⠶⠚⠋⠉⠛⠆";sleep $w1
-    echo "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⡇⠀⠀⢸⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
-    echo "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⢻⠇⠀⠀⠘⡟⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
-    echo "    ⠰⣄⡀⠀⠀⣀⣠⡤⠞⠠⠁⠀⢸⠀⠀⠀⠀⡇⠀⠘⠄⠳⢤⣀⣀⠀⠀⣀⣠⠀";sleep $w1
-    echo "    ⠀⢻⣏⢻⣯⡉⠀⠀⠀⠀⠀⠒⢎⣓⠶⠶⣞⡱⠒⠀⠀⠀⠀⠀⢉⣽⡟⣹⡟⠀";sleep $w1
-    echo "    ⠀⠀⢻⣆⠹⣿⣆⣀⣀⣀⣀⣴⣿⣿⠟⠻⣿⣿⣦⣀⣀⣀⣀⣰⣿⠟⣰⡟⠀⠀";sleep $w1
-    echo "    ⠀⠀⠀⠻⣧⡘⠻⠿⠿⠿⠿⣿⣿⣃⣀⣀⣙⣿⣿⠿⠿⠿⠿⠟⢃⣴⠟⠀⠀⠀";sleep $w1
-    echo "    ⠀⠀⠀⠀⠙⣮⠐⠤⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠤⠊⡵⠋⠀⠀⠀⠀";sleep $w1
-    echo "    ⠀⠀⠀⠀⠀⠈⠳⡀⠀⠀⠀⠀⠀⠲⣶⣶⠖⠀⠀⠀⠀⠀⢀⠜⠁⠀⠀⠀⠀⠀";sleep $w1
-    echo "    ⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⢀⣿⣿⡀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀";sleep $w1
-    echo "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
-    echo "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
-    echo "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
+    echo -e "$GREEN"
+    echo -e ""
+    echo -e "    ⠀⢠⡿⠿⠿⠿⢿⣿⣿⣷⣾⣆⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⡿⠿⠿⠿⠿⣦⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⣿⡿⠆⠀⠀⠀⠀⠰⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⣀⣤⡤⠄⢤⣀⡈⢿⡄⠀⠀⠀⠀⢠⡟⢁⣠⡤⠠⠤⢤⣀⠀⠀⠀⠀";sleep $w1
+    echo -e "    ⠐⢄⣀⣼⢿⣾⣿⣿⣿⣷⣿⣆⠁⡆⠀⠀⢰⠈⢸⣿⣾⣿⣿⣿⣷⡮⣧⣀⡠⠀";sleep $w1
+    echo -e "    ⠰⠛⠉⠙⠛⠶⠶⠏⠷⠛⠋⠁⢠⡇⠀⠀⢸⡄⠈⠛⠛⠿⠹⠿⠶⠚⠋⠉⠛⠆";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⡇⠀⠀⢸⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⢻⠇⠀⠀⠘⡟⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
+    echo -e "    ⠰⣄⡀⠀⠀⣀⣠⡤⠞⠠⠁⠀⢸⠀⠀⠀⠀⡇⠀⠘⠄⠳⢤⣀⣀⠀⠀⣀⣠⠀";sleep $w1
+    echo -e "    ⠀⢻⣏⢻⣯⡉⠀⠀⠀⠀⠀⠒⢎⣓⠶⠶⣞⡱⠒⠀⠀⠀⠀⠀⢉⣽⡟⣹⡟⠀";sleep $w1
+    echo -e "    ⠀⠀⢻⣆⠹⣿⣆⣀⣀⣀⣀⣴⣿⣿⠟⠻⣿⣿⣦⣀⣀⣀⣀⣰⣿⠟⣰⡟⠀⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠻⣧⡘⠻⠿⠿⠿⠿⣿⣿⣃⣀⣀⣙⣿⣿⠿⠿⠿⠿⠟⢃⣴⠟⠀⠀⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⠙⣮⠐⠤⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠤⠊⡵⠋⠀⠀⠀⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⠀⠈⠳⡀⠀⠀⠀⠀⠀⠲⣶⣶⠖⠀⠀⠀⠀⠀⢀⠜⠁⠀⠀⠀⠀⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⢀⣿⣿⡀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
+    echo -e "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";sleep $w1
+    echo -e "$NC"
 }
 
 sysinfo(){
@@ -108,16 +126,16 @@ sysinfo(){
     disk_usage=$(df -h / | tail -n 1 | awk '{print $5}')
 
     # Display the device details
-    echo "    system: $system"
-    echo "    Kernel Version: $kernel_version"
-    echo "    CPU Model: $cpu_model"
-    echo "    CPU Cores: $cpu_cores"
-    echo "    Total RAM: $total_ram"
-    echo "    Disk Usage: $disk_usage"
-    echo ""
-    echo ""
+    echo -e "${CYAN}    system: $system${NC}"
+    echo -e "${CYAN}    Kernel Version: $kernel_version${NC}"
+    echo -e "${CYAN}    CPU Model: $cpu_model${NC}"
+    echo -e "${CYAN}    CPU Cores: $cpu_cores${NC}"
+    echo -e "${CYAN}    Total RAM: $total_ram${NC}"
+    echo -e "${CYAN}    Disk Usage: $disk_usage${NC}"
+    echo -e ""
+    echo -e ""
 
-    read -p "    Press Enter To Start $system  "
+    read -p "${RED}    Press Enter To Start $system  ${NC}"
 
 
     
@@ -126,7 +144,8 @@ sysinfo(){
 
 
 if [[ $usr = "$username" && $pass = "$password" ]]; then
-    echo "    Success !"
+    echo -e ""
+    echo -e "${GREEN}    Success !${NC}"
     sleep 1
     clear
     logo
@@ -138,5 +157,5 @@ if [[ $usr = "$username" && $pass = "$password" ]]; then
     sysinfo
     clear
 else
-    echo "    Sorry, you can't use $(whoami)"
+    echo -e "${RED}    Sorry, you can't use $(whoami)${NC}"
 fi
