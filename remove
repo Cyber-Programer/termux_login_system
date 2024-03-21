@@ -1,12 +1,27 @@
 #!/bin/bash
 
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+NC=$(tput sgr0)
+
 if test -f "/data/data/com.termux/files/usr/bin/login";then
 
-    echo "available"
-    rm -rf /data/data/com.termux/files/usr/bin/login
+    echo "${GREEN} Available ${NC}"
+
+    if ! "rm -rf ../usr/bin/login"; then
+        echo "${RED}File removeing problem  [../usr/bin/login]${NC}"
+    else
+        echo "${GREEN}File removeing Done !${NC}"
+    fi
+
     echo ""    
-    echo "Manualy remove the 'login' word from the /usr/etc/bash.bashrc file "
+    echo "${RED}Manualy remove the 'login' word from the /usr/etc/bash.bashrc file ${NC}"
+
+    echo "${GREEN}All Done ${NC}"
+    echo "${GREEN}Join Our Telegram Channel${NC}"
+    sleep 1
+    xdg-open https://t.me/cyber_man_root
 
 else
-    echo "File not found"
+    echo "${RED}File not found${NC}"
 fi
