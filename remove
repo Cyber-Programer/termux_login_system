@@ -9,6 +9,8 @@ GRAY=$'\033[1;30m'
 CYAN=$'\033[1;36m'
 WHITE=$'\033[1;37m'
 NC=$'\033[0m'
+
+
 if test -f "/data/data/com.termux/files/usr/bin/login";then
 
     echo "${GREEN} Available ${NC}"
