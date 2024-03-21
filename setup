@@ -10,7 +10,7 @@ CYAN=$'\033[1;36m'
 WHITE=$'\033[1;37m'
 NC=$'\033[0m'
 
-if test -f "login";then
+if [ -f "login" ]; then
 
     echo "${GREEN}Available${NC}"
 
@@ -18,31 +18,16 @@ if test -f "login";then
         echo "${RED}Exicute Permission provide Eroor${NC}"
     else
         echo "${GREEN}Exicute Permission Provide Done${NC}"
+    fi
 
-
-    fi 
-
-    if ! cp login ../usr/bin/; then
+    if ! cp -f login ../usr/bin/; then
         echo "${RED}File [ login ] coppy Eroor${NC}"
     else
         echo "${GREEN}File [ login ] coppy Done ${NC}"
     fi
 
-    if ! "echo 'login' >> ../usr/etc/bash.bashrc"; then
-        echo "${RED}File can't set in .bashrc file${NC}"
-    else
-        echo "${GREEN}File set on .bashrc file${NC}"
-    fi
-
-    echo "${GREEN}All Done ${NC}"
-    echo "${GREEN}Join Our Telegram Channel${NC}"
-    sleep 1
-    xdg-open https://t.me/cyber_man_root
-
-
-
-else
-    echo "${RED}File not found${NC}"
-fi
-
-
+    if ! grep -q 'login' ../usr/etc/bash.bashrc; then
+        if ! echo 'login' >> ../usr/etc/bash.bashrc; then
+            echo "${RED}File can't set in .bashrc file${NC}"
+        else
+            echo "${GREEN}File set on .bas
