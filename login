@@ -4,7 +4,6 @@ read -p "    Username: " usr
 read -s -p "    Password: " pass
 echo ""
 
-
 username=""
 password=""
 
@@ -92,9 +91,6 @@ sysinfo(){
     # Get the kernel version
     kernel_version=$(uname -r)
 
-    # Get the uptime
-    uptime=$(uptime -p)
-
     # Get the number of users currently logged in
     user_count=$(who | wc -l)
 
@@ -113,7 +109,6 @@ sysinfo(){
     # Display the device details
     echo "    Hostname: $hostname"
     echo "    Kernel Version: $kernel_version"
-    echo "    Uptime: $uptime"
     echo "    Number of Users Logged In: $user_count"
     echo "    CPU Model: $cpu_model"
     echo "    CPU Cores: $cpu_cores"
