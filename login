@@ -1,5 +1,8 @@
 #!/bin/bash
 clear
+echo ""
+echo ""
+echo ""
 read -p "    Username: " usr
 read -s -p "    Password: " pass
 echo ""
@@ -91,9 +94,6 @@ sysinfo(){
     # Get the kernel version
     kernel_version=$(uname -r)
 
-    # Get the number of users currently logged in
-    user_count=$(who | wc -l)
-
     # Get the CPU model
     cpu_model=$(lscpu | grep 'Model name:' | cut -d ':' -f 2 | tr -d ' ')
 
@@ -109,7 +109,6 @@ sysinfo(){
     # Display the device details
     echo "    Hostname: $hostname"
     echo "    Kernel Version: $kernel_version"
-    echo "    Number of Users Logged In: $user_count"
     echo "    CPU Model: $cpu_model"
     echo "    CPU Cores: $cpu_cores"
     echo "    Total RAM: $total_ram"
