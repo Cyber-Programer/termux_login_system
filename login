@@ -4,6 +4,7 @@ echo ""
 echo ""
 echo ""
 read -p "    Username: " usr
+echo ""
 read -s -p "    Password: " pass
 echo ""
 
