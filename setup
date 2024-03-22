@@ -20,14 +20,14 @@ if [ -f "tmxlogin" ]; then
         echo -e "${GREEN}Execute Permission Provided${NC}"
     fi
 
-    if ! cp -f tmxlogin /usr/bin/; then
+    if ! cp -f tmxlogin /data/data/com.termux/files/usr/bin/; then
         echo -e "${RED}File [ tmxlogin ] copy Error${NC}"
     else
         echo -e "${GREEN}File [ tmxlogin ] copied successfully ${NC}"
     fi
 
-    if ! grep -q 'tmxlogin' /usr/etc/bash.bashrc; then
-        if ! echo 'tmxlogin' >> /usr/etc/bash.bashrc; then
+    if ! grep -q 'tmxlogin' /data/data/com.termux/files/usr/etc/bash.bashrc; then
+        if ! echo 'tmxlogin' >> /data/data/com.termux/files/usr/etc/bash.bashrc; then
             echo -e "${RED}Can't set file in .bashrc file${NC}"
         else
             echo -e "${GREEN}File set on .bashrc file${NC}"
