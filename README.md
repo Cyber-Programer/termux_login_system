@@ -55,7 +55,11 @@ Open the `/data/data/com.termux/files/usr/etc/bash.bashrc` file with any `text e
 Now the script will proparly closed.
 
 ## Befor 
-![eeb41b79-7049-4c12-b73a-05baef99b5f9](https://github.com/Cyber-Programer/termux_login_system/assets/125746506/4d59e275-fd91-45d2-a1a8-1fcd43895e96)
+<img src="https://github.com/Cyber-Programer/termux_login_system/assets/125746506/4d59e275-fd91-45d2-a1a8-1fcd43895e96" width="400px" >
+
+
+## After
+https://github.com/Cyber-Programer/termux_login_system/assets/125746506/c1b890c3-821d-4407-b072-0d4778b19a55
 
 
 ## Note :
